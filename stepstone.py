@@ -57,8 +57,8 @@ from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 
 def fetch_stepstone_data():
-    url = "https://www.stepstone.de/work/full-time/backend-developer/in-germany?radius=30&searchOrigin=Homepage_top-search&whereType=autosuggest"
-
+    url = "https://www.stepstone.de/work/in-germany?radius=30&searchOrigin=Resultlist_top-search"
+    
     options = webdriver.ChromeOptions()
     options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:139.0) Gecko/20100101 Firefox/139.0")
     options.add_argument('--disable-blink-features=AutomationControlled')
@@ -80,7 +80,7 @@ def fetch_stepstone_data():
             url = title_elem['href'] if title_elem and title_elem.has_attr('href') else "N/A"
             company_elem = job.select_one('[data-at="job-item-company-name"], div[class*="company"]')
             company = company_elem.text.strip() if company_elem else "N/A"
-
+            
             jobs.append({
                 "title": title,
                 "company": company,
