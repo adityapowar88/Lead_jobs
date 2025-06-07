@@ -16,9 +16,8 @@ def fetch_xing_data():
     soup = BeautifulSoup(driver.page_source, 'html.parser')
 
     jobs = []
-    for page in range(1, 4):
+    for page in range(1, 3):
         url = f"{base_url}&page={page}"
-        # print(f"Scraping page {page}: {url}")  
         driver.get(url)
         time.sleep(10)
 
@@ -56,4 +55,4 @@ def fetch_xing_data():
     print(json.dumps(jobs, indent=2, ensure_ascii=False))
     return jobs
 
-fetch_xing_data()
+

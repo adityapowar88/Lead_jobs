@@ -13,9 +13,8 @@ def fetch_stepstone_data():
 
     driver = webdriver.Chrome(options=options)
     jobs = []
-    for page in range(1, 5): 
+    for page in range(1, 2): 
         url = base_url + str(page)
-        print(f"Scraping page {page}: {url}")
         driver.get(url)
         time.sleep(8)  
 
@@ -44,4 +43,3 @@ def fetch_stepstone_data():
     print(json.dumps(jobs, indent=2, ensure_ascii=False))
     return jobs
 
-fetch_stepstone_data()
