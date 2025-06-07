@@ -5,8 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup
 
 def fetch_xing_data():
-    base_url = "https://www.xing.com/jobs/search?sc_o=losp_jobs_search_button_click&sc_o_PropActionOrigin=losp_job_search&location=germany"
-
+    
     options = webdriver.ChromeOptions()
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36")
     options.add_argument('--disable-blink-features=AutomationControlled')
@@ -52,7 +51,9 @@ def fetch_xing_data():
                 print("Error parsing job:", e)
 
     driver.quit()
-    print(json.dumps(jobs, indent=2, ensure_ascii=False))
     return jobs
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ebe54271ce29f739885b798cf0087997138a7cea
