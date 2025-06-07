@@ -6,17 +6,15 @@ def save_stepstone_jobs(request):
     try:
         jobs = fetch_stepstone_data()
         website = "https://www.stepstone.de"
-
         for job in jobs:
             Job_Posts.objects.create(
                 lead_title="Scraped via StepStone",
                 job_post_url=job.get("url"),
                 job_title=job.get("title"),
                 company_name=job.get("company"),
-                website=website,
+                # website=website,
                 person_location=job.get("location")
             )
-
         return JsonResponse({"status": "success", "message": f"{len(jobs)} StepStone jobs saved."})
     
     except Exception as e:
