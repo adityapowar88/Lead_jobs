@@ -15,13 +15,7 @@ class Job_Posts(models.Model):
     mobile_number2 = models.CharField(max_length=15, null=True, blank=True)
     person_linkedin_url = models.URLField(max_length=500, null=True, blank=True)
     person_location = models.CharField(max_length=200, null=True, blank=True)
-<<<<<<< HEAD
     platform_name = models.CharField(max_length=100, null=True, blank=True)
-
-
-=======
-    
->>>>>>> ebe54271ce29f739885b798cf0087997138a7cea
 
     def __str__(self):
         return f"{self.job_title} at {self.company_name} ({self.lead_title} )"
